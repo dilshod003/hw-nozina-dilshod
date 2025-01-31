@@ -1,0 +1,126 @@
+/* btn header */
+.btn-header {
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 400;
+  z-index: 0;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.btn-header:hover {
+  animation: sh0 0.5s ease-in-out both;
+  background-color: #24ab70;
+}
+
+@keyframes sh0 {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: rotate(7deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotate(-7deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+.btn-header:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+.btn-header::before,
+.btn-header::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  z-index: -1;
+  transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+
+.btn-header:hover::before,
+.btn-header:hover::after {
+  opacity: 0.15;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1),
+    opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.btn-header:hover::before {
+  transform: translate3d(50%, 0, 0) scale(0.9);
+}
+
+.btn-header:hover::after {
+  transform: translate(50%, 0) scale(1.1);
+}
+
+/* nav */
+.nav-src {
+  font-size: 18px;
+  letter-spacing: 2px;
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+  padding: 3px 15px;
+}
+
+.nav-src:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #24ab70;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.nav-src:hover,
+.nav-src:focus {
+  color: white;
+}
+
+.nav-src:hover:before,
+.nav-src:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.nav-src:active {
+  transform: scale(0.9);
+}
+
+.section1-text {
+  border-top-left-radius: 47px;
+  border-top-right-radius: 47px;
+}
+
+.img:hover {
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
